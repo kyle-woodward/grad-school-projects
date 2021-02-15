@@ -1,4 +1,4 @@
-## CHIRPS Precipitation Time Series - Identifying Onset of Dry Season 
+## CHIRPS Precipitation Time Series - Identifying Onset of Dry Season in the Kavango-Zambezi 
 ## Kyle Woodward
 
 library(raster)
@@ -13,7 +13,7 @@ library(RColorBrewer)
 
 
 #load AOI shapefile
-AOI <- st_read("C:/Thesis/Data/Imagery/AOIs/EntireAOI_wgs.shp") 
+AOI <- st_read("EntireAOI_wgs.shp") 
 
 # stack all .tif's from given hydrologic year, output to one multi-layer .tif, load as a rasterBrick
 setwd("C:/Thesis/Data/Precipitation")
