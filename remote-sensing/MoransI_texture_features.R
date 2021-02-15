@@ -1,4 +1,4 @@
-## Texture Metrics - Spatial Stats 
+## Create MoransI texture features from Landsat NDVI and SAVI 
 ## Kyle Woodward
 library(dplyr)
 library(sf)
@@ -81,8 +81,8 @@ plot(MoranLocal(r1,f7_r), main = "Rook's case 7x7, random raster")
 
 ## Neighborhood comparison on my real 2018 NDVI raster data--------------------
 
-ndvi2018 <- raster("C:/Thesis/Data/Processed/landsat/ndvi2018.tif")
-ra <- st_read("C:/Thesis/Data/ResourceAreas/output/RA_AddedCovariates_prj.shp")
+ndvi2018 <- raster("ndvi2018.tif")
+ra <- st_read("RA_AddedCovariates_prj.shp")
 
 #a resource area in Zambia, pretty small 
 sho <- filter(ra, Name == "Shokosha")
@@ -112,7 +112,7 @@ plot(q15, main = "15x15 queens")
 ## Moran's I: 3x3, 7x7, 11x11 from NDVI and SAVI all 3 years
 
 ## 1994 NDVI -----------------
-ndvi1994 <- raster("C:/Thesis/Data/Processed/landsat/ndvi1994.tif")
+ndvi1994 <- raster("ndvi1994.tif")
 
 #3x3
 Sys.time()
@@ -124,7 +124,7 @@ time_taken <- end - start
 time_taken
 
 plot(q3ndvi_94, main = "3x3 Moran's I on 1994 NDVI")
-writeRaster(q3ndvi_94, "C:/Thesis/Data/Processed/landsat/MI_NDVI94_3x3.tif",
+writeRaster(q3ndvi_94, "MI_NDVI94_3x3.tif",
                         format = "GTiff",
                         overwrite = TRUE,
                         NAflag = -9999)
@@ -141,7 +141,7 @@ time_taken <- end - start
 time_taken
 
 plot(q7ndvi_94, main = "7x7 Moran's I on 1994 NDVI")
-writeRaster(q7ndvi_94, "C:/Thesis/Data/Processed/landsat/MI_NDVI94_7x7.tif",
+writeRaster(q7ndvi_94, "MI_NDVI94_7x7.tif",
             format = "GTiff",
             overwrite = TRUE,
             NAflag = -9999)
@@ -157,13 +157,13 @@ time_taken <- end - start
 time_taken
 
 plot(q11ndvi_94, main = "11x11 Moran's I on 1994 NDVI")
-writeRaster(q11ndvi_94, "C:/Thesis/Data/Processed/landsat/MI_NDVI94_11x11.tif",
+writeRaster(q11ndvi_94, "MI_NDVI94_11x11.tif",
             format = "GTiff",
             overwrite = TRUE,
             NAflag = -9999)
 
 ## 2004 NDVI ---------------------------
-ndvi2004 <- raster("C:/Thesis/Data/Processed/landsat/ndvi2004.tif")
+ndvi2004 <- raster("ndvi2004.tif")
 
 #3x3
 Sys.time()
@@ -175,7 +175,7 @@ time_taken <- end - start
 time_taken
 
 #plot(q3ndvi_04, main = "3x3 Moran's I on 2004 NDVI")
-writeRaster(q3ndvi_04, "C:/Thesis/Data/Processed/landsat/MI_NDVI04_3x3.tif",
+writeRaster(q3ndvi_04, "MI_NDVI04_3x3.tif",
             format = "GTiff",
             overwrite = TRUE,
             NAflag = -9999)
@@ -192,7 +192,7 @@ time_taken <- end - start
 time_taken
 
 #plot(q7ndvi_04, main = "7x7 Moran's I on 2004 NDVI")
-writeRaster(q7ndvi_04, "C:/Thesis/Data/Processed/landsat/MI_NDVI04_7x7.tif",
+writeRaster(q7ndvi_04, "MI_NDVI04_7x7.tif",
             format = "GTiff",
             overwrite = TRUE,
             NAflag = -9999)
@@ -208,14 +208,14 @@ time_taken <- end - start
 time_taken
 
 #plot(q11ndvi_04, main = "11x11 Moran's I on 2004 NDVI")
-writeRaster(q11ndvi_04, "C:/Thesis/Data/Processed/landsat/MI_NDVI04_11x11.tif",
+writeRaster(q11ndvi_04, "MI_NDVI04_11x11.tif",
             format = "GTiff",
             overwrite = TRUE,
             NAflag = -9999)
 
 # 2018 NDVI------------------------- 
 
-ndvi2018 <- raster("C:/Thesis/Data/Processed/landsat/ndvi2018.tif")
+ndvi2018 <- raster("ndvi2018.tif")
 
 #3x3
 
@@ -228,7 +228,7 @@ time_taken <- end - start
 time_taken
 
 plot(q3ndvi, main = "3x3 Moran's I on 2018 NDVI")
-writeRaster(q3ndvi, "C:/Thesis/Data/Processed/landsat/MI_NDVI18_3x3.tif",
+writeRaster(q3ndvi, "MI_NDVI18_3x3.tif",
             format = "GTiff",
             overwrite = TRUE,
             NAflag = -9999)
@@ -243,7 +243,7 @@ time_taken <- end - start
 time_taken
 
 plot(q7ndvi, main = "7x7 Moran's I on 2018 NDVI")
-writeRaster(q7ndvi, "C:/Thesis/Data/Processed/landsat/MI_NDVI18_7x7.tif",
+writeRaster(q7ndvi, "MI_NDVI18_7x7.tif",
             format = "GTiff",
             overwrite = TRUE,
             NAflag = -9999)
@@ -258,14 +258,14 @@ time_taken <- end - start
 time_taken
 
 plot(q11ndvi, main = "11x11 Moran's I on 2018 NDVI")
-writeRaster(q11ndvi, "C:/Thesis/Data/Processed/landsat/MI_NDVI18_11x11.tif",
+writeRaster(q11ndvi, "MI_NDVI18_11x11.tif",
             format = "GTiff",
             overwrite = TRUE,
             NAflag = -9999)
 
 
 ## 1994 SAVI --------------------------------
-savi1994 <- raster("C:/Thesis/Data/Processed/landsat/savi1994.tif")
+savi1994 <- raster("savi1994.tif")
 
 #3x3
 Sys.time()
@@ -277,7 +277,7 @@ time_taken <- end - start
 time_taken
 
 plot(q3savi_94, main = "3x3 Moran's I on 1994 SAVI")
-writeRaster(q3savi_94, "C:/Thesis/Data/Processed/landsat/MI_SAVI94_3x3.tif",
+writeRaster(q3savi_94, "MI_SAVI94_3x3.tif",
             format = "GTiff",
             overwrite = TRUE,
             NAflag = -9999)
@@ -294,7 +294,7 @@ time_taken <- end - start
 time_taken
 
 plot(q7savi_94, main = "7x7 Moran's I on 1994 SAVI")
-writeRaster(q7savi_94, "C:/Thesis/Data/Processed/landsat/MI_SAVI94_7x7.tif",
+writeRaster(q7savi_94, "MI_SAVI94_7x7.tif",
             format = "GTiff",
             overwrite = TRUE,
             NAflag = -9999)
@@ -310,7 +310,7 @@ time_taken <- end - start
 time_taken
 
 plot(q11savi_94, main = "11x11 Moran's I on 1994 SAVI")
-writeRaster(q11savi_94, "C:/Thesis/Data/Processed/landsat/MI_SAVI94_11x11.tif",
+writeRaster(q11savi_94, "MI_SAVI94_11x11.tif",
             format = "GTiff",
             overwrite = TRUE,
             NAflag = -9999)
@@ -318,7 +318,7 @@ writeRaster(q11savi_94, "C:/Thesis/Data/Processed/landsat/MI_SAVI94_11x11.tif",
 
 ## 2004 SAVI ---------------------------
 
-savi2004 <- raster("C:/Thesis/Data/Processed/landsat/savi2004.tif")
+savi2004 <- raster("savi2004.tif")
 
 #3x3
 Sys.time()
@@ -330,7 +330,7 @@ time_taken <- end - start
 time_taken
 
 plot(q3savi_04, main = "3x3 Moran's I on 2004 SAVI")
-writeRaster(q3savi_04, "C:/Thesis/Data/Processed/landsat/MI_SAVI04_3x3.tif",
+writeRaster(q3savi_04, "MI_SAVI04_3x3.tif",
             format = "GTiff",
             overwrite = TRUE,
             NAflag = -9999)
@@ -347,7 +347,7 @@ time_taken <- end - start
 time_taken
 
 plot(q7savi_04, main = "7x7 Moran's I on 2004 SAVI")
-writeRaster(q7savi_04, "C:/Thesis/Data/Processed/landsat/MI_SAVI04_7x7.tif",
+writeRaster(q7savi_04, "MI_SAVI04_7x7.tif",
             format = "GTiff",
             overwrite = TRUE,
             NAflag = -9999)
@@ -363,7 +363,7 @@ time_taken <- end - start
 time_taken
 
 plot(q11savi_04, main = "11x11 Moran's I on 2004 SAVI")
-writeRaster(q11savi_04, "C:/Thesis/Data/Processed/landsat/MI_SAVI04_11x11.tif",
+writeRaster(q11savi_04, "MI_SAVI04_11x11.tif",
             format = "GTiff",
             overwrite = TRUE,
             NAflag = -9999)
@@ -371,7 +371,7 @@ writeRaster(q11savi_04, "C:/Thesis/Data/Processed/landsat/MI_SAVI04_11x11.tif",
 
 ## 2018 SAVI ---------------------------
 
-savi2018 <- raster("C:/Thesis/Data/Processed/landsat/savi2018.tif")
+savi2018 <- raster("savi2018.tif")
 
 #3x3
 Sys.time()
@@ -383,7 +383,7 @@ time_taken <- end - start
 time_taken
 
 plot(q3savi_18, main = "3x3 Moran's I on 2018 SAVI")
-writeRaster(q3savi_18, "C:/Thesis/Data/Processed/landsat/MI_SAVI18_3x3.tif",
+writeRaster(q3savi_18, "MI_SAVI18_3x3.tif",
             format = "GTiff",
             overwrite = TRUE,
             NAflag = -9999)
@@ -400,7 +400,7 @@ time_taken <- end - start
 time_taken
 
 plot(q7savi_18, main = "7x7 Moran's I on 2018 SAVI")
-writeRaster(q7savi_18, "C:/Thesis/Data/Processed/landsat/MI_SAVI18_7x7.tif",
+writeRaster(q7savi_18, "MI_SAVI18_7x7.tif",
             format = "GTiff",
             overwrite = TRUE,
             NAflag = -9999)
@@ -416,7 +416,7 @@ time_taken <- end - start
 time_taken
 
 plot(q11savi_18, main = "11x11 Moran's I on 2018 SAVI")
-writeRaster(q11savi_18, "C:/Thesis/Data/Processed/landsat/MI_SAVI18_11x11.tif",
+writeRaster(q11savi_18, "MI_SAVI18_11x11.tif",
             format = "GTiff",
             overwrite = TRUE,
             NAflag = -9999)
