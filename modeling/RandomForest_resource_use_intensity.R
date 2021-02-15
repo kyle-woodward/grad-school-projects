@@ -138,7 +138,7 @@ save(graze_cat_RF, file="graze_cat_RF.RData")
 
 #Create prediction raster
 #make sure all raster layers match total variables in training data 
-st_x <- dropLayer(st, c("graze_cat", "graze_bi", "countries"))
+st_x <- dropLayer(st, c("graze_cat", "graze_bi", "countries")) #dropping response variables and misc variables
 
 r_pred <- raster::predict(object = st_x, model = tune_fit,
                           filename = "graze_cat_seed1771.tif",
