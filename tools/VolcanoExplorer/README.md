@@ -1,3 +1,4 @@
+![beforeAfter](https://user-images.githubusercontent.com/51868526/113901822-3d5b8600-979d-11eb-8756-70e4eb304ec8.jpeg)
 # Volcano Explorer
 ### Author: Kyle Woodward
 
