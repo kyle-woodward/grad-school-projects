@@ -36,4 +36,4 @@ Arguments:
  Therefore, the total number of imagery sets downloaded may be fewer than the max specified by the --number argument._
     
 **Ensure that both scripts are stored in the same directory on your computer and run the volcano_explorer.py from command-line.**\
-_Anaconda users can create a working virtual environment with the provided pygis.yml file_
+**Anaconda users can create a working virtual environment with the provided pygis.yml file.**
