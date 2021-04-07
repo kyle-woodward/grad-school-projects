@@ -6,7 +6,7 @@ for exploring Landsat imagery collected around the same timeframe as the occurre
 historically significant volcanic eruptions around the world. 
 
 After running the script without any arguments, a cleaned and formatted copy of 
-the US Dept of Homeland Secrity's (Historically Significant Volcanic Eruptions dataset)[https://hifld-geoplatform.opendata.arcgis.com/datasets/3ed5925b69db4374aec43a054b444214_6?geometry=-127.266%2C-88.438%2C127.266%2C88.438] is saved to the new output\eruptions folder.
+the US Dept of Homeland Secrity's [Historically Significant Volcanic Eruptions dataset](https://hifld-geoplatform.opendata.arcgis.com/datasets/3ed5925b69db4374aec43a054b444214_6?geometry=-127.266%2C-88.438%2C127.266%2C88.438) is saved to the new output\eruptions folder.
 
 Example:\
 `python volcano_explorer.py`
