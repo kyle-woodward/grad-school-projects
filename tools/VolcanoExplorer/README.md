@@ -1,7 +1,7 @@
 # Volcano Explorer
 ### Author: Kyle Woodward
 ![beforeAfter](https://user-images.githubusercontent.com/51868526/113901822-3d5b8600-979d-11eb-8756-70e4eb304ec8.jpeg)
-The purpose of this tool is to provide an easy, repeatable query/download command-line interface to explore
+The purpose of this tool is to provide a command-line interface for easy, repeatable exploration of
 Landsat imagery in the USGS EarthExplorer archive that have a high chance of capturing volcanic eruptions in action from 1980 onward.
 
 After running the volcano_explorer.py from command-line without any arguments, a cleaned and formatted copy of 
