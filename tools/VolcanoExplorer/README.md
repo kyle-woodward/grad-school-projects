@@ -34,5 +34,5 @@ Arguments:
  and the tool will only download imagery if one image before after the volcanic eruption date were returned in the search. 
  Therefore, the total number of imagery sets downloaded may be fewer than the max specified by the --number argument._
     
-**Ensure that both scripts are stored in the same directory on your computer and run the volcano_explorer.py from command-line.**
-
+**Ensure that both scripts are stored in the same directory on your computer and run the volcano_explorer.py from command-line.**\
+_Anaconda users can create a working virtual environment with the provided pygis.yml file_
