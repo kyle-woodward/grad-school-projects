@@ -15,7 +15,8 @@ would like to filter their Landsat imagery search, using the optional arugments 
 and 'COUNTRY' fields. Any combination of the optional arguments can be used or not used.
 
 **You must have an EarthExploer account to provide login credentials to the landsatxplore API.**\
-If you don't have an account, you can create one quickly at the [USGS EarthExplorer homepage](https://earthexplorer.usgs.gov/).\
+If you don't have an account, you can create one quickly at the [USGS EarthExplorer homepage](https://earthexplorer.usgs.gov/)\
+
 Example 1:\
 `python volcano_explorer.py -u myusername -p mypassword -sy 2000 -ey 2013 -c NewZealand UnitedStates Nicaragua -n 5`\
 Example 2:\
