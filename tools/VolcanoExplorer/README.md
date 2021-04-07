@@ -1,9 +1,8 @@
 # Volcano Explorer
 ### Author: Kyle Woodward
 
-The purpose of this script is to provide a dynamic query/download process
-for exploring Landsat imagery collected around the same timeframe as the occurrence of
-historically significant volcanic eruptions around the world. 
+The purpose of this script is to provide an easy and repeatable query/download process
+for Landsat imagery in the USGS EarthExplorer archive that have a high chance of capturing volcanic eruptions in action from 1980 onward.
 
 After running the script without any arguments, a cleaned and formatted copy of 
 the US Dept of Homeland Secrity's [Historically Significant Volcanic Eruptions dataset](https://hifld-geoplatform.opendata.arcgis.com/datasets/3ed5925b69db4374aec43a054b444214_6?geometry=-127.266%2C-88.438%2C127.266%2C88.438) is saved to the new output\eruptions folder.
@@ -29,10 +28,9 @@ Arguments:
 * -n --number: maximum number* of before/after Landsat imagery sets to download (optional, default=1)
 
 
- _the value given to -n argument may not result in that number of imagery sets downloaded.
-    Other non-dynamic query criteria are passed to the landsatxplore API to find
-    clear images very close to the time of volcanic eruption. THe user may change
-    these hard-coded values if they wish._
+ _Other search criteria are passed to the landsatxplore API internally, like cloud cover and date range, \
+ and the tool will only download imagery if both Before and After images were returned in the search. Therefore, the\
+ total number of imagery sets downloaded may be fewer than the max specified by the --number argument._
     
 **Ensure that both scripts are stored in the same directory on your computer, and run the volcano_explorer.py script from command-line.**
 
